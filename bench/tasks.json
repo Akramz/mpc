@@ -1,0 +1,22 @@
+[
+  {
+    "id": "summit",
+    "prompt": "What is the highest elevation in the Copernicus 30 m DEM within 300 m of longitude 37.3085, latitude -0.1521 (Mount Kenya), in meters?",
+    "checks": ["\\b5,?1[0-9]{2}\\b"]
+  },
+  {
+    "id": "landcover",
+    "prompt": "At longitude 37.5, latitude -2.5 in Kenya, what land cover class do ESA WorldCover 2021 and Esri's 2023 annual land cover map give, and do they agree?",
+    "checks": ["(?i)grassland", "(?i)rangeland"]
+  },
+  {
+    "id": "maize",
+    "prompt": "A farmer's maize plot is at longitude 34.39767, latitude 0.48864 in western Kenya. Using satellite imagery: (1) during 2023, when was the plot greenest, and when was it bare or harvested? (2) Is there a patch of tree cover within about 2 km of the plot, and roughly which direction is it? Name the dates and scenes your answer rests on.",
+    "checks": ["\\bMay\\b", "S2[AB]_MSIL2A_2023"]
+  },
+  {
+    "id": "water",
+    "prompt": "What is the nearest open water body to longitude 34.39767, latitude 0.48864 (western Kenya) that Sentinel-2 can see in 2023? Give its approximate distance and direction from that point, and name the scene you used.",
+    "checks": ["\\d+(\\.\\d+)?\\s?km", "S2[AB]_MSIL2A_2023"]
+  }
+]

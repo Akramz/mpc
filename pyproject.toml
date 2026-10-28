@@ -1,0 +1,51 @@
+[project]
+name = "mpc-cli"
+version = "0.1.0"
+description = "Read Microsoft Planetary Computer imagery at a place, at native resolution, for agents and people."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+authors = [{ name = "Akram Zaytar" }]
+dependencies = [
+    "httpx>=0.27",
+    "numpy>=2.0",
+    "pillow>=11.0",
+    "rasterio>=1.4",
+]
+
+[project.urls]
+Homepage = "https://github.com/Akramz/mpc"
+
+[project.scripts]
+mpc = "mpc.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.12",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["mpc"]
+
+[tool.uv]
+default-groups = ["dev"]
+
+[[tool.uv.index]]
+name = "pypi"
+url = "https://pypi.org/simple"
+default = true
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

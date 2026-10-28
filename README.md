@@ -91,9 +91,11 @@ name. Past 10 GB, `read` and `navigate` say so. STAC searches are cached for an 
 
 ## Network and files
 
-mpc talks only to the Planetary Computer: `planetarycomputer.microsoft.com` (STAC search, the
-data API and SAS tokens) and the Azure Blob Storage its items point to
-(`*.blob.core.windows.net`). It sends no telemetry. It writes to `~/.cache/mpc` (or
+mpc talks only to the Planetary Computer: `planetarycomputer.microsoft.com` (the place, dates and
+band names you ask about, for STAC search, the data API and SAS tokens) and the Azure Blob
+Storage its items point to (`*.blob.core.windows.net`). The Claude Code plugin also lets `uvx`
+download `mpc-cli` from PyPI when `mpc` is not installed. It sends no personal data, credentials
+or telemetry. It writes to `~/.cache/mpc` (or
 `$MPC_HOME`), to files you name with `--save`, and, with `mpc install-skill`, to a link in each
 of `~/.claude`, `~/.copilot` and `~/.codex` that exists.
 

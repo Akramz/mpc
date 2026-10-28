@@ -35,7 +35,7 @@ def git(*args: str) -> str:
 
 
 def skill() -> str:
-    body = (REPO / "mpc" / "skill" / "SKILL.md").read_text().split("---", 2)[2].strip()
+    body = (REPO / "plugin" / "skills" / "mpc" / "SKILL.md").read_text().split("---", 2)[2].strip()
     assert body, "empty skill text"
     return body
 

@@ -1,6 +1,14 @@
 {
   "name": "mpc",
   "description": "The mpc plugin: read Planetary Computer imagery at a place.",
-  "owner": { "name": "Akram Zaytar", "url": "https://github.com/Akramz" },
-  "plugins": [{ "name": "mpc", "source": "./" }]
+  "owner": {
+    "name": "Akram Zaytar",
+    "url": "https://github.com/Akramz"
+  },
+  "plugins": [
+    {
+      "name": "mpc",
+      "source": "./plugin"
+    }
+  ]
 }

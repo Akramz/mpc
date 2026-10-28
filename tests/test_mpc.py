@@ -413,7 +413,7 @@ def test_a_large_store_says_so(monkeypatch, capsys):
 
 
 def test_skill_frontmatter_is_strict_yaml():
-    text = (Path(cli.__file__).parent / "skill" / "SKILL.md").read_text()
+    text = (Path(cli.__file__).parent.parent / "plugin" / "skills" / "mpc" / "SKILL.md").read_text()
     head = text.split("---")[1].strip().splitlines()
     for line in head:
         key, _, value = line.partition(": ")
@@ -479,6 +479,6 @@ def test_the_plugin_the_package_and_the_skill_name_one_version():
 
     root = Path(cli.__file__).parent.parent
     version = tomllib.loads((root / "pyproject.toml").read_text())["project"]["version"]
-    plugin = json.loads((root / ".claude-plugin" / "plugin.json").read_text())
+    plugin = json.loads((root / "plugin" / ".claude-plugin" / "plugin.json").read_text())
     assert plugin["version"] == version
-    assert f"mpc-cli=={version}" in (root / "mpc" / "skill" / "SKILL.md").read_text()
+    assert f"mpc-cli=={version}" in (root / "plugin" / "skills" / "mpc" / "SKILL.md").read_text()

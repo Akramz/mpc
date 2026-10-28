@@ -33,6 +33,9 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["mpc"]
 
+[tool.hatch.build.targets.wheel.force-include]
+"plugin/skills/mpc" = "mpc/skill"
+
 [tool.uv]
 default-groups = ["dev"]
 

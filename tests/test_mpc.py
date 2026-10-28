@@ -472,3 +472,13 @@ def test_comparisons_give_one_zero_or_nan_where_data_is_missing():
     assert np.array_equal(ex.evaluate("SCL==6", bands), [1, 0, np.nan], equal_nan=True)
     assert np.array_equal(ex.evaluate("(SCL!=6)*B08", bands)[:2], np.float32([0, 0.5]))
     assert np.array_equal(ex.evaluate("0.2 < B08 <= 0.5", bands), [1, 1, 0])
+
+
+def test_the_plugin_the_package_and_the_skill_name_one_version():
+    import tomllib
+
+    root = Path(cli.__file__).parent.parent
+    version = tomllib.loads((root / "pyproject.toml").read_text())["project"]["version"]
+    plugin = json.loads((root / ".claude-plugin" / "plugin.json").read_text())
+    assert plugin["version"] == version
+    assert f"mpc-cli=={version}" in (root / "mpc" / "skill" / "SKILL.md").read_text()

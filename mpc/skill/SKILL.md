@@ -5,8 +5,9 @@ description: Read satellite imagery and maps from Microsoft Planetary Computer a
 
 # mpc
 
-`mpc` reads the Microsoft Planetary Computer (MPC). If `mpc` is not found, tell the user to run
-`uv tool install mpc-cli` and stop.
+`mpc` reads the Microsoft Planetary Computer (MPC). If `mpc` is not found, run
+`uvx --from mpc-cli==0.1.0 mpc` in its place, with the same arguments; it needs no install. If
+`uvx` is not found either, tell the user to install uv (https://docs.astral.sh/uv/) and stop.
 
 ## Find data
 

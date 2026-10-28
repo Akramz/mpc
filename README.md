@@ -10,6 +10,15 @@ or support it.
 
 ## Install
 
+In Claude Code, install the plugin. It runs mpc with `uvx`, so it needs only
+[uv](https://docs.astral.sh/uv/):
+
+```console
+/plugin install mpc --marketplace Akramz/mpc
+```
+
+For other agents (Copilot CLI, Codex) or the shell, install the CLI and link the skill:
+
 ```console
 uv tool install mpc-cli
 mpc install-skill        # links the skill into ~/.claude, ~/.copilot and ~/.codex, where present

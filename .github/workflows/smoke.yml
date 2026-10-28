@@ -1,0 +1,20 @@
+name: smoke
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [publish]
+    types: [completed]
+jobs:
+  pypi:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+      - name: install the release from PyPI
+        run: |
+          v=$(uv version --short)
+          for i in 1 2 3 4 5; do uvx --from "mpc-cli==$v" mpc catalog land cover && exit 0; sleep 30; done
+          exit 1
+      - name: read live pixels with it
+        run: uvx --from "mpc-cli==$(uv version --short)" mpc read sentinel-2-l2a --location 34.39767,0.48864 --expr "(B08-B04)/(B08+B04)" --dates 2023-05-16

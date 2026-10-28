@@ -1,0 +1,12 @@
+{
+  "name": "mpc",
+  "displayName": "mpc",
+  "version": "0.1.0",
+  "description": "Read Planetary Computer satellite imagery and maps at a place, at native resolution: values over time, images, indices, land cover and elevation. Unofficial.",
+  "author": { "name": "Akram Zaytar", "url": "https://github.com/Akramz" },
+  "homepage": "https://github.com/Akramz/mpc",
+  "repository": "https://github.com/Akramz/mpc",
+  "license": "MIT",
+  "keywords": ["satellite", "remote-sensing", "geospatial", "stac", "sentinel-2", "planetary-computer"],
+  "skills": ["./mpc/skill"]
+}

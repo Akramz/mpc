@@ -6,7 +6,7 @@ description: Read satellite imagery and maps from Microsoft Planetary Computer a
 # mpc
 
 `mpc` reads the Microsoft Planetary Computer (MPC). If `mpc` is not found, tell the user to run
-`uv tool install git+https://github.com/Akramz/mpc` and stop.
+`uv tool install mpc-cli` and stop.
 
 ## Find data
 

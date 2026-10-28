@@ -15,6 +15,7 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://github.com/Akramz/mpc"
+Issues = "https://github.com/Akramz/mpc/issues"
 
 [project.scripts]
 mpc = "mpc.cli:main"

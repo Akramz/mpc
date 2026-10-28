@@ -11,7 +11,7 @@ or support it.
 ## Install
 
 ```console
-uv tool install git+https://github.com/Akramz/mpc
+uv tool install mpc-cli
 mpc install-skill        # links the skill into ~/.claude, ~/.copilot and ~/.codex, where present
 ```
 

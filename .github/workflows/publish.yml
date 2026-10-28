@@ -1,0 +1,17 @@
+name: publish
+on:
+  push:
+    tags: ["v*"]
+jobs:
+  pypi:
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.2
+      - run: test "v$(uv version --short)" = "$GITHUB_REF_NAME"
+      - run: make verify
+      - run: uv build
+      - run: uv publish
